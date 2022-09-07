@@ -12,8 +12,8 @@ public class PhysicsMovement : MonoBehaviour
     private Vector2 _groundNormal;
     private Rigidbody2D _rb2d;
     private ContactFilter2D _contactFilter;
-    private RaycastHit2D[] _hitBuffer = new RaycastHit2D[16];
-    private List<RaycastHit2D> _hitBufferList = new List<RaycastHit2D>(16);
+    private RaycastHit2D[] _hitBuffer = new RaycastHit2D[10];
+    private List<RaycastHit2D> _hitBufferList = new List<RaycastHit2D>(10);
     private float _minMoveDistance = 0.001f;
     private float _shellRadius = 0.01f;
 
