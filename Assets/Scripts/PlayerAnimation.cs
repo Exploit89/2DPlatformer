@@ -5,7 +5,6 @@ public class PlayerAnimation : MonoBehaviour
     [SerializeField] private float _speed;
 
     private Animator _animator;
-    private bool _isFacingRight;
 
     private void Start()
     {
