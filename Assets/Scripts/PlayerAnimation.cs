@@ -5,13 +5,14 @@ public class PlayerAnimation : MonoBehaviour
     [SerializeField] private float _speed;
 
     private Animator _animator;
+    private bool _isFacingRight;
 
-    void Start()
+    private void Start()
     {
         _animator = GetComponent<Animator>();
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetKey(KeyCode.Space))
         {
@@ -23,6 +24,7 @@ public class PlayerAnimation : MonoBehaviour
         {
             transform.Translate(_speed * Time.deltaTime * -1, 0, 0);
             _animator.SetTrigger("MoveLeft");
+            transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
         }
 
         if (Input.GetKey(KeyCode.D))
