@@ -8,7 +8,8 @@ public class WaypointMovement : MonoBehaviour
     [SerializeField] private float _speed;
 
     private Transform[] _points;
-    private int _currentPoint;
+    //private int _currentPoint;
+    public int CurrentPoint { get; private set; }
 
     private void Start()
     {
@@ -22,16 +23,16 @@ public class WaypointMovement : MonoBehaviour
 
     private void Update()
     {
-        Transform target = _points[_currentPoint];
+        Transform target = _points[CurrentPoint];
         transform.position = Vector2.MoveTowards(transform.position, target.position, _speed * Time.deltaTime);
 
         if (transform.position == target.position)
         {
-            _currentPoint++;
+            CurrentPoint++;
 
-            if (_currentPoint >= _points.Length)
+            if (CurrentPoint >= _points.Length)
             {
-                _currentPoint = 0;
+                CurrentPoint = 0;
             }
         }
     }
