@@ -1,8 +1,9 @@
 using UnityEngine;
 
-public class PlayerAnimation : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _speed;
+    [SerializeField] private IsGroundedTrigger _isGrounded;
 
     private Animator _animator;
     private bool _isDirectionRight = true;
@@ -10,6 +11,8 @@ public class PlayerAnimation : MonoBehaviour
     private void Start()
     {
         _animator = GetComponent<Animator>();
+        _isGrounded.PlayerUngrounded.AddListener(Jump);
+        _isGrounded.PlayerGrounded.AddListener(Jump);
     }
 
     private void Update()
@@ -18,6 +21,7 @@ public class PlayerAnimation : MonoBehaviour
         {
             _animator.SetTrigger("Jump");
             transform.Translate(0, _speed * Time.deltaTime, 0);
+            Jump();
         }
 
         if (Input.GetKey(KeyCode.A))
@@ -48,5 +52,10 @@ public class PlayerAnimation : MonoBehaviour
     private void TurnDirection()
     {
             transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+    }
+
+    private void Jump()
+    {
+
     }
 }
