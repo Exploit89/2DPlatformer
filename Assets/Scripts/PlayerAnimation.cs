@@ -24,6 +24,7 @@ public class PlayerAnimation : MonoBehaviour
         {
             transform.Translate(_speed * Time.deltaTime * -1, 0, 0);
             _animator.SetTrigger("MoveLeft");
+
             if (_isDirectionRight)
             {
                 TurnDirection();
@@ -35,6 +36,7 @@ public class PlayerAnimation : MonoBehaviour
         {
             _animator.SetTrigger("MoveRight");
             transform.Translate(_speed * Time.deltaTime, 0, 0);
+
             if (!_isDirectionRight)
             {
                 TurnDirection();

@@ -17,6 +17,7 @@ public class EnemyAnimation : MonoBehaviour
         if (_waypoint.CurrentPoint == 0)
         {
             _animator.SetTrigger("EnemyMoveLeft");
+
             if (_isDirectionRight)
             {
                 TurnDirection();
@@ -27,6 +28,7 @@ public class EnemyAnimation : MonoBehaviour
         if (_waypoint.CurrentPoint != 0)
         {
             _animator.SetTrigger("EnemyMoveRight");
+
             if (!_isDirectionRight)
             {
                 TurnDirection();

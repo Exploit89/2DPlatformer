@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WaypointMovement : MonoBehaviour
@@ -8,7 +6,7 @@ public class WaypointMovement : MonoBehaviour
     [SerializeField] private float _speed;
 
     private Transform[] _points;
-    //private int _currentPoint;
+
     public int CurrentPoint { get; private set; }
 
     private void Start()
