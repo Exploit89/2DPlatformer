@@ -1,18 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CoinInstantiate : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject _template;
+    [SerializeField] private Transform _instantiatePoints;
 
-    // Update is called once per frame
-    void Update()
+    private Transform[] _points;
+
+    private void Start()
     {
-        
+        _points = new Transform[_instantiatePoints.childCount];
+
+        for (int i = 0; i < _instantiatePoints.childCount; i++)
+        {
+            _points[i] = _instantiatePoints.GetChild(i);
+            GameObject newObject = Instantiate(_template, _points[i]);
+        }
     }
 }
