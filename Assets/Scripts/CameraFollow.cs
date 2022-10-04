@@ -4,7 +4,7 @@ public class CameraFollow : MonoBehaviour
 {
     [SerializeField] private Transform _target;
     [SerializeField] private float topLimit = 10.0f;
-    [SerializeField] private float bottomLimit = -10.0f;
+    [SerializeField] private float bottomLimit = -2.0f;
     [SerializeField] private float followSpeed = 0.7f;
 
     void LateUpdate()
