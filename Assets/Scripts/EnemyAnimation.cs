@@ -16,7 +16,8 @@ public class EnemyAnimation : MonoBehaviour
     {
         if (_waypoint.CurrentPoint == 0)
         {
-            _animator.SetTrigger("EnemyMoveLeft");
+            var enemyMoveLeftHash = Animator.StringToHash("EnemyMoveLeft");
+            _animator.SetTrigger(enemyMoveLeftHash);
 
             if (_isDirectionRight)
             {
@@ -27,7 +28,8 @@ public class EnemyAnimation : MonoBehaviour
 
         if (_waypoint.CurrentPoint != 0)
         {
-            _animator.SetTrigger("EnemyMoveRight");
+            var enemyMoveRightHash = Animator.StringToHash("EnemyMoveRight");
+            _animator.SetTrigger(enemyMoveRightHash);
 
             if (!_isDirectionRight)
             {

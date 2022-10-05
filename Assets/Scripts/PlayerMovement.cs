@@ -1,5 +1,7 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
+
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _speed;
@@ -16,14 +18,16 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            _animator.SetTrigger("Jump");
+            var jumpHash = Animator.StringToHash("Jump");
+            _animator.SetTrigger(jumpHash);
             transform.Translate(0, _speed * Time.deltaTime, 0);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
             transform.Translate(_speed * Time.deltaTime * -1, 0, 0);
-            _animator.SetTrigger("MoveLeft");
+            var moveLeftHash = Animator.StringToHash("MoveLeft");
+            _animator.SetTrigger(moveLeftHash);
 
             if (_isDirectionRight)
             {
@@ -34,7 +38,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.D))
         {
-            _animator.SetTrigger("MoveRight");
+            var moveRightHash = Animator.StringToHash("MoveRight");
+            _animator.SetTrigger(moveRightHash);
             transform.Translate(_speed * Time.deltaTime, 0, 0);
 
             if (!_isDirectionRight)

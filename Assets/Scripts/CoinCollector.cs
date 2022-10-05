@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(SpriteRenderer))]
+
 public class CoinCollector : MonoBehaviour
 {
     [SerializeField] private UnityEvent _reached;

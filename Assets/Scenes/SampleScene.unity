@@ -1291,7 +1291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83dfde58801621648847717b6a91109d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _template: {fileID: 5232836952199308227, guid: d360167942478c4408fde33b326792be, type: 3}
+  _template: {fileID: 6023947930645916361, guid: d360167942478c4408fde33b326792be, type: 3}
   _instantiatePoints: {fileID: 2019779783}
 --- !u!4 &1165973541
 Transform:
